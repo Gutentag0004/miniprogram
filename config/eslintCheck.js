@@ -21,7 +21,7 @@ function getErrorLevel(number) {
   return 'undefined';
 }
 let pass = 0;
-exec('git diff --cached --name-only --diff-filter=ACM | grep -Ei "\\.ts$|\\.js$"', (error, stdout) => {
+exec('git diff --cached --name-only --diff-filter=ACM | grep -Ei "\.ts$|\.js$" || true', (error, stdout) => {
   if (stdout.length) {
     const array = stdout.split('\n');
     array.pop();
