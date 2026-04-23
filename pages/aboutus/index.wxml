@@ -1,0 +1,31 @@
+<view class="container">
+
+  <view class="hero">
+    <image class="hero-image" src="/model/images/petsaving.png" mode="aspectFill" />
+    <view class="hero-title">宠物之家</view>
+    <view class="hero-subtitle">让每一只动物都被温柔对待</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">我们的使命</view>
+    <view class="section-body">
+      宠物之家致力于为流浪动物寻找温暖的家庭，同时为宠物主人提供优质的宠物用品与专业的养宠知识。我们相信每一只动物都值得被爱护，每一位宠物主人都值得被支持。
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">我们是谁</view>
+    <view class="section-body">
+      我们是一支热爱动物的小团队，由宠物医生、救助志愿者和产品爱好者共同组成。从 2020 年起，我们已帮助超过 500 只流浪动物找到了新家，并服务了数千位宠物家庭。
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">联系我们</view>
+    <view class="contact-item">
+      <view class="contact-label">邮箱</view>
+      <view class="contact-value">hello@pethouse.com</view>
+    </view>
+  </view>
+
+</view>

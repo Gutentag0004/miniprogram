@@ -1,0 +1,193 @@
+<view class="page">
+
+  <!-- Sidebar -->
+  <view class="sidebar">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="index"
+      class="sidebar-item {{activeTab === index ? 'sidebar-item--active' : ''}}"
+      data-index="{{index}}"
+      bindtap="onTabTap"
+    >{{item.label}}</view>
+  </view>
+
+  <!-- Content -->
+  <scroll-view class="content" scroll-y>
+
+    <!-- 关于领养 -->
+    <block wx:if="{{activeTab === 0}}">
+      <view class="content-title">关于领养</view>
+      <view class="content-section">
+        <view class="section-heading">我们的宠物从哪里来？</view>
+        <view class="section-text">宠物之家的每一只动物都来自真实的救助故事。它们有的被遗弃在街头，有的来自过度繁殖的家庭，有的则是主人因各种原因无力继续照料而托付给我们。每一只宠物在进入领养程序前，都经过专业兽医的全面体检、疫苗注射与绝育手术，确保它们以最健康的状态迎接新家庭。</view>
+      </view>
+      <view class="content-section">
+        <view class="section-heading">领养流程</view>
+        <view class="step-item">
+          <view class="step-num">1</view>
+          <view class="step-text">提交领养申请 —— 填写「领养信息」表单，告诉我们关于你和你的生活环境。</view>
+        </view>
+        <view class="step-item">
+          <view class="step-num">2</view>
+          <view class="step-text">审核与沟通 —— 我们的志愿者会在 3 个工作日内与你联系，进行简单的电话或视频沟通。</view>
+        </view>
+        <view class="step-item">
+          <view class="step-num">3</view>
+          <view class="step-text">签署领养协议 —— 阅读并签署「领养协议」，承诺为宠物提供长期、负责任的照料。</view>
+        </view>
+        <view class="step-item">
+          <view class="step-num">4</view>
+          <view class="step-text">接回宠物 —— 安排上门领养或由志愿者护送，完成交接并获得健康档案。</view>
+        </view>
+        <view class="step-item">
+          <view class="step-num">5</view>
+          <view class="step-text">回访跟进 —— 领养后 1 个月、3 个月我们会进行回访，随时为你提供养宠建议。</view>
+        </view>
+      </view>
+      <view class="content-section">
+        <view class="section-heading">领养须知</view>
+        <view class="section-text">领养是一项长期承诺，平均一只猫咪或狗狗的寿命在 12 至 18 年。请在申请前认真评估自己的生活状况、居住条件和经济能力。我们不鼓励冲动领养，宁愿让宠物多等一个月，也要找到真正合适的家。</view>
+      </view>
+    </block>
+
+    <!-- 领养协议 -->
+    <block wx:elif="{{activeTab === 1}}">
+      <view class="content-title">领养协议</view>
+      <view class="agreement-intro">请仔细阅读以下协议内容。提交领养申请即表示您已阅读并同意本协议全部条款。</view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第一条 协议目的</view>
+        <view class="agreement-text">本协议由宠物之家（以下简称"领养方"）与领养人（以下简称"领养人"）共同签订，旨在明确双方在宠物领养过程中的权利与义务，保障被领养动物的健康、安全与福利，促进负责任的宠物文化。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第二条 宠物信息</view>
+        <view class="agreement-text">领养方将向领养人提供被领养宠物的完整健康档案，包括但不限于：品种、年龄、性别、绝育状况、疫苗接种记录、驱虫记录、既往病史及兽医诊断报告。领养人有权在领养前查阅上述全部资料。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第三条 领养人基本承诺</view>
+        <view class="agreement-text">领养人承诺：\n\n（一）为宠物提供安全、舒适、卫生的居住环境，保证其有足够的活动空间；\n\n（二）按时为宠物提供充足、营养均衡的食物和清洁饮水；\n\n（三）定期带宠物进行兽医检查，每年至少一次健康体检，并按照兽医建议完成疫苗接种和驱虫；\n\n（四）不得以任何形式虐待、遗弃、转让、买卖或赠予被领养宠物；\n\n（五）若因不可抗力或特殊情况无法继续饲养，须第一时间联系宠物之家，由我方协助安排转养，不得擅自处置。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第四条 居住与环境要求</view>
+        <view class="agreement-text">领养人应确保居住环境允许饲养宠物。若为租住房屋，须事先取得房东书面同意。对于大型犬，领养人须保证有足够的户外活动空间，并承诺每日不少于一次遛狗。室内饲养的猫咪须提供猫抓板、猫窝及充足的玩具等丰容设施。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第五条 回访与监督</view>
+        <view class="agreement-text">宠物之家保留在领养后对宠物生活状况进行定期回访的权利。回访方式包括电话、微信或上门探视。领养人应积极配合回访工作。若回访发现宠物生活条件不达标或存在疑似虐待情况，宠物之家有权要求领养人限期整改，情节严重者有权取回宠物。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第六条 医疗责任</view>
+        <view class="agreement-text">宠物领养完成后，其日常医疗费用由领养人全额承担。宠物之家不对领养后发生的疾病、意外或死亡承担经济责任，但将在领养人需要时提供力所能及的兽医咨询和转介服务。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第七条 禁止事项</view>
+        <view class="agreement-text">领养人明确承诺不得实施以下行为：\n\n（一）以任何金额出售被领养宠物；\n\n（二）将宠物用于繁殖商业目的；\n\n（三）将宠物独自关禁超过 24 小时而无人照料；\n\n（四）对宠物施以体罚或精神虐待；\n\n（五）未经兽医建议擅自给宠物服用药物；\n\n（六）将宠物遗弃于公共场所或野外。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第八条 协议变更与终止</view>
+        <view class="agreement-text">本协议自领养人提交领养申请并经宠物之家确认之日起生效，有效期覆盖宠物的自然生命周期。任何一方如需变更协议条款，须经双方书面协商一致。领养人严重违反本协议的，宠物之家有权单方面终止协议并取回宠物。</view>
+      </view>
+
+      <view class="agreement-section">
+        <view class="agreement-heading">第九条 争议解决</view>
+        <view class="agreement-text">本协议的签订、履行及争议解决均适用中华人民共和国相关法律法规。如双方发生争议，应首先友好协商解决；协商不成的，任何一方均可向宠物之家所在地人民法院提起诉讼。</view>
+      </view>
+
+      <view class="agreement-footer">本人已认真阅读上述全部条款，充分理解并自愿接受本协议约束。</view>
+    </block>
+
+    <!-- 领养信息 -->
+    <block wx:elif="{{activeTab === 2}}">
+      <view class="content-title">领养信息</view>
+      <view class="form-intro">请填写以下信息，帮助我们更好地了解您，为宠物找到最合适的家。</view>
+
+      <view class="form-section">
+        <view class="form-section-title">基本信息</view>
+        <view class="form-item">
+          <view class="form-label">姓名</view>
+          <input class="form-input" placeholder="请输入您的真实姓名" bindinput="onInput" data-field="name" value="{{form.name}}" />
+        </view>
+        <view class="form-item">
+          <view class="form-label">联系电话</view>
+          <input class="form-input" placeholder="请输入手机号码" type="number" bindinput="onInput" data-field="phone" value="{{form.phone}}" />
+        </view>
+        <view class="form-item">
+          <view class="form-label">居住城市</view>
+          <input class="form-input" placeholder="例：上海市浦东新区" bindinput="onInput" data-field="city" value="{{form.city}}" />
+        </view>
+      </view>
+
+      <view class="form-section">
+        <view class="form-section-title">居住情况</view>
+        <view class="form-item">
+          <view class="form-label">住房类型</view>
+          <view class="radio-group">
+            <view
+              wx:for="{{housingOptions}}"
+              wx:key="index"
+              class="radio-item {{form.housing === item ? 'radio-item--active' : ''}}"
+              data-field="housing"
+              data-value="{{item}}"
+              bindtap="onRadioTap"
+            >{{item}}</view>
+          </view>
+        </view>
+        <view class="form-item">
+          <view class="form-label">是否有其他宠物</view>
+          <view class="radio-group">
+            <view
+              wx:for="{{petOptions}}"
+              wx:key="index"
+              class="radio-item {{form.hasPets === item ? 'radio-item--active' : ''}}"
+              data-field="hasPets"
+              data-value="{{item}}"
+              bindtap="onRadioTap"
+            >{{item}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="form-section">
+        <view class="form-section-title">养宠背景</view>
+        <view class="form-item form-item--column">
+          <view class="form-label">过往养宠经历</view>
+          <textarea class="form-textarea" placeholder="请描述您是否养过宠物，养过什么，多久等..." bindinput="onInput" data-field="experience" value="{{form.experience}}" />
+        </view>
+        <view class="form-item form-item--column">
+          <view class="form-label">领养原因</view>
+          <textarea class="form-textarea" placeholder="请告诉我们您为什么想领养，以及您能为宠物提供什么样的生活..." bindinput="onInput" data-field="reason" value="{{form.reason}}" />
+        </view>
+      </view>
+
+      <view class="submit-btn" bindtap="onSubmit">提交领养申请</view>
+    </block>
+
+    <!-- 关于我们 -->
+    <block wx:elif="{{activeTab === 3}}">
+      <view class="content-title">关于我们</view>
+      <view class="content-section">
+        <view class="section-heading">我们是谁</view>
+        <view class="section-text">我们是一个由宠物爱好者、志愿者和专业兽医组成的团队。我们热爱生命，深信每一只小动物都值得被温柔以待。通过这个平台，我们希望连接那些渴望关爱的流浪生命与愿意提供温暖港湾的家庭。</view>
+      </view>
+      <view class="content-section">
+        <view class="section-heading">小程序初衷</view>
+        <view class="section-text">开发这款小程序的初衷是希望利用技术手段，让宠物领养变得更加透明、规范和高效。我们旨在为流浪动物提供一个集中的展示平台，同时通过规范的审核流程，确保每一份领养意向都能转化为一份长久的承诺。</view>
+      </view>
+      <view class="content-section">
+        <view class="section-heading">联系我们</view>
+        <view class="section-text">如果您有任何疑问、建议，或者想加入我们的志愿者行列，欢迎通过邮件与我们取得联系：</view>
+        <view class="contact-email">support@petadoption.com</view>
+      </view>
+    </block>
+
+  </scroll-view>
+
+</view>
+<t-toast id="t-toast" />

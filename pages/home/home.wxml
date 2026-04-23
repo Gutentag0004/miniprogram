@@ -1,0 +1,68 @@
+<view class="page">
+
+  <!-- Filter bar -->
+  <view class="filter-bar">
+    <view
+      wx:for="{{filters}}"
+      wx:key="index"
+      class="filter-item {{filter === item ? 'filter-item--active' : ''}}"
+      data-filter="{{item}}"
+      bindtap="onFilterTap"
+    >{{item}}</view>
+  </view>
+
+  <!-- Waterfall grid -->
+  <view class="waterfall">
+    <view class="col">
+      <view
+        wx:for="{{leftCol}}"
+        wx:key="id"
+        class="pet-card"
+        data-id="{{item.id}}"
+        bindtap="onCardTap"
+      >
+        <image class="pet-card-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="pet-card-body">
+          <view class="pet-card-name-row">
+            <text class="pet-card-name">{{item.name}}</text>
+            <text class="pet-card-sex">{{item.sex}}</text>
+          </view>
+          <view class="pet-card-meta-row">
+            <view class="pet-card-status {{item.status === '待领养' ? 'pet-card-status--available' : item.status === '已预约' ? 'pet-card-status--reserved' : 'pet-card-status--adopted'}}">{{item.status}}</view>
+            <text class="pet-card-age">{{item.age}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="col">
+      <view
+        wx:for="{{rightCol}}"
+        wx:key="id"
+        class="pet-card"
+        data-id="{{item.id}}"
+        bindtap="onCardTap"
+      >
+        <image class="pet-card-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="pet-card-body">
+          <view class="pet-card-name-row">
+            <text class="pet-card-name">{{item.name}}</text>
+            <text class="pet-card-sex">{{item.sex}}</text>
+          </view>
+          <view class="pet-card-meta-row">
+            <view class="pet-card-status {{item.status === '待领养' ? 'pet-card-status--available' : item.status === '已预约' ? 'pet-card-status--reserved' : 'pet-card-status--adopted'}}">{{item.status}}</view>
+            <text class="pet-card-age">{{item.age}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Empty state -->
+  <view class="load-tip" wx:if="{{loadStatus === 0 && leftCol.length === 0 && rightCol.length === 0}}">暂无符合条件的宠物</view>
+
+  <!-- Load state -->
+  <view class="load-tip" wx:if="{{loadStatus === 1}}">加载中...</view>
+  <view class="load-tip" wx:elif="{{loadStatus === 2}}">没有更多了</view>
+
+</view>

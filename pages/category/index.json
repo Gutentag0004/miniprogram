@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "领养中心",
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  }
+}

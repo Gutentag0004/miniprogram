@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "宠物之家",
+  "onReachBottomDistance": 60,
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}
