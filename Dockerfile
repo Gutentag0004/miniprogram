@@ -12,7 +12,8 @@ RUN npm install -g miniprogram-ci
 
 # Copy package files and install dependencies
 COPY package*.json ./
-RUN npm install --ignore-scripts
+ENV HUSKY=0
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
